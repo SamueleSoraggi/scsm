@@ -1,0 +1,29 @@
+name: /work/Data/Environment2
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+  - nclibz
+dependencies:
+  - r-irkernel
+  - certifi
+  - ipykernel
+  - scanpy
+  - r-tidyr
+  - r-seurat
+  - bioconductor-mast
+  - bioconductor-multtest
+  - r-metap
+  - r-stringi
+  - r-readxl
+  - ca-certificates
+  - openssl
+  - bioconductor-limma
+  - r-remotes
+  - r-wgcna
+  - r-tinytex
+  - r-devtools
+  - r-seuratdisk
+  - r-qlcmatrix
+  - r-ggforestplot
+prefix: /work/Data/Environment2
