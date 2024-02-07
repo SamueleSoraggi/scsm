@@ -45,7 +45,7 @@ All groups and subgroups can exchange information and discuss their own findings
 
 Here you will work together and only one person needs to start `jupyterlab` ( it can be a different person every time ).
 
-1. Start a `jupyterlab` session as you did in [the tutorial session](./tutorial.md)
+1. Start a `jupyterlab` session as you did in [the tutorial session](./tutorial.qmd)
 
 2. Go into the correct Group folder found inside `426401/Groups_analysis`. Here you find the notebook `integration.ipynb`, a copy from the second part of the tutorial. 
    

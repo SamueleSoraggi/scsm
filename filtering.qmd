@@ -38,7 +38,7 @@ As a reminder, these are the personal folders with the sample folder contained i
 
 ## Instructions
 
-1. Open a new session of jupyterlab in the same way as in [the tutorial session](./tutorial.md)
+1. Open a new session of jupyterlab in the same way as in [the tutorial session](./tutorial.qmd)
 
 2. Find your way to your personal folder, which is inside `426401/Students_analysis`
 
