@@ -1,6 +1,6 @@
 on:
   push:
-    branches: webpage-quarto
+    branches: webpage
 
 name: Quarto Publish
 
