@@ -1,0 +1,52 @@
+---
+title: "Intergation"
+format: html
+date-modified: last-modified
+date-format: long
+date: 2024-01-01
+bibliography: resources/references.bib
+#https://emojidb.org/quarto-emojis for emojis copypaste
+---
+
+For the data integration and comparison between conditions, you will work in groups and load the datasets from each personal folder to merge them together (all sixteen of them).
+
+The groups are as during the course. Each group performs a comparison between Control and RINRK1_Infected and can separate in two subgroups, performing separately
+- the differential gene expression and 
+- the coexpression analysis.
+Each group folder has a two subgroups folder, in case you want to split the work. The working folders are inside ´Group_analysis´.
+
+All groups and subgroups can exchange information and discuss their own findings.
+
+| Name | Group | Comparison |
+|---|---|---|
+| Andersen, Albert Lund  | 1  | HAR1_Control vs Gifu_Control|
+| Bagger, Andreas	  | 1  | HAR1_Control vs Gifu_Control|
+| Hansen, Mads Würgler	  | 1 | HAR1_Control vs Gifu_Control|
+| Milo, Lasse	  | 1  | HAR1_Control vs Gifu_Control|
+| Reimick, Sebastian Haunstrup  | 1  | HAR1_Control vs Gifu_Control|
+| Hemmingsen, Jonas Klejs  | 2  | HAR1_Infected vs Gifu_Infected|
+| Skovmøller, Emma Hvitfeldt  | 2  | HAR1_Infected vs Gifu_Infected|
+| Sørensen, Emma Frasez  | 2  |HAR1_Infected vs Gifu_Infected|
+|Agersnap, Simon Nørregaard | 2 |HAR1_Infected vs Gifu_Infected|
+| Schmidt, Alina | 3 | HAR1_Control vs Gifu_Control|
+|Henriksen, Frederik Oskar | 3  | HAR1_Control vs Gifu_Control|
+|Lundby, Josephine Marie | 3 | HAR1_Control vs Gifu_Control|
+|Nørholm, Anne | 3 | HAR1_Control vs Gifu_Control|
+|Odgaard, Louise Nyrup | 3 | HAR1_Control vs Gifu_Control|
+|Sørensen, Sara Sejer | 3 | HAR1_Control vs Gifu_Control|
+|Lønskov, Jonas | 4 |HAR1_Infected vs Gifu_Infected|
+|Niklassen, Jacob Hansen | 4 |HAR1_Infected vs Gifu_Infected|
+|Øllgaard, Ann Mai Brøndum Holm | 4 |HAR1_Infected vs Gifu_Infected|
+|Overgaard, Morten Øgelund | 4 |HAR1_Infected vs Gifu_Infected|
+|Sørensen, Elisabeth Asta | 4 |HAR1_Infected vs Gifu_Infected|
+|Rey, Isabel | 4 |HAR1_Infected vs Gifu_Infected|
+
+## Instructions
+
+Here you will work together and only one person needs to start `jupyterlab` ( it can be a different person every time ).
+
+1. Start a `jupyterlab` session as you did in [the tutorial session](./tutorial.md)
+
+2. Go into the correct Group folder found inside `426401/Groups_analysis`. Here you find the notebook `integration.ipynb`, a copy from the second part of the tutorial. 
+   
+3. Try to do the clustering integrating all datasets and then perform the assigned comparison.

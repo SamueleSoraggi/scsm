@@ -1,0 +1,42 @@
+---
+title: "Single cell data analysis"
+subtitle: "Single cell data analysis from the single cell single molecule course at AU"
+format: html
+date-modified: last-modified
+date-format: long
+date: 2024-01-01
+bibliography: resources/references.bib
+#https://emojidb.org/quarto-emojis for emojis copypaste
+---
+
+:::{.callout-note title="Objective of the analysis"}
+
+* learn to filtered the data and decide filtering thresholds
+* interpret data projections
+* discuss various clustering and cell identity techniques
+* integrate datasets across different conditions
+* perform differential gene expression and conserved gene inference
+* understand and discuss the results from the workflow for gene coexpression modules
+
+:::
+
+## How to proceed
+
+Use the top menu to get instructions for the various parts of the analysis as you will be noticed during the course. The top menu contains:
+
+1. **Tutorial:** analysis tutorial using data from the [Biorxiv paper of week 6](https://www.biorxiv.org/content/10.1101/2022.12.23.521739v1) 
+(every student works independently). Tutorial days: 1st and eventually 2nd day of data analysis
+
+2. **Data Filtering:** filtering of your own data (every student works independently). Filtering days: 
+
+3. **Data Integration:** integration of all datasets and comparison between between Gifu and HAR1 mutant. Integration days: 
+
+## Progress discussion
+
+***day (May ***) each group shows the progress made in the integration analysis. You don't need to do slides, just show some main plots/tables from your analysis notebook. Even just one or two plots or tables would be fine.
+
+It is mostly a time to compare progresses and discuss any issue (technically or biologically related).
+
+## Beyond lesson time
+
+Please try to mail if you run into problems (`samuele at birc.au.dk`) so we can try to organize a meeting or zoom session to continue working.
