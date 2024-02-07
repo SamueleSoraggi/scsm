@@ -14,8 +14,8 @@ website:
         text: Filtering
       - href: integration.qmd
         text: Integration
-#      - href: nb/tutorial-2024.html
-#        text: Tutorial Code
+      - href: nb/tutorial-2024.ipynb
+        text: Tutorial Code
     right: 
       - icon: github
         href: https://github.com/SamueleSoraggi/scsm
