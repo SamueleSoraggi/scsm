@@ -1,5 +1,5 @@
 ---
-title: "Intergation"
+title: "Integration"
 format: html
 date-modified: last-modified
 date-format: long

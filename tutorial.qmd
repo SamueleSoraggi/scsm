@@ -1,4 +1,12 @@
-# Data analysis Tutorial 
+---
+title: "Data analysis tutorial"
+format: html
+date-modified: last-modified
+date-format: long
+date: 2024-01-01
+bibliography: resources/references.bib
+#https://emojidb.org/quarto-emojis for emojis copypaste
+---
 
 Here you have the instructions to start working on the tutorial. 
 
