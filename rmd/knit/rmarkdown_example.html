@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-01-01">
+<meta name="dcterms.date" content="2000-01-01">
 
-<title>Single cell Single molecule - scRNA analysis - Integration</title>
+<title>Single cell Single molecule - scRNA analysis - Rmarkdown example</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,27 +21,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -80,10 +114,10 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./img/logo.png" alt="" class="navbar-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../img/logo.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Single cell Single molecule - scRNA analysis</span>
     </a>
   </div>
@@ -94,23 +128,23 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Introduction</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tutorial.html"> 
+    <a class="nav-link" href="../../tutorial.html"> 
 <span class="menu-text">Tutorial</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./filtering.html"> 
+    <a class="nav-link" href="../../filtering.html"> 
 <span class="menu-text">Filtering</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./integration.html" aria-current="page"> 
+    <a class="nav-link" href="../../integration.html"> 
 <span class="menu-text">Integration</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./nb/tutorial-2024.html"> 
+    <a class="nav-link" href="../../nb/tutorial-2024.html"> 
 <span class="menu-text">Tutorial Code</span></a>
   </li>  
 </ul>
@@ -137,7 +171,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#instructions" id="toc-instructions" class="nav-link active" data-scroll-target="#instructions">Instructions</a></li>
+  <li><a href="#rmarkdown-example" id="toc-rmarkdown-example" class="nav-link active" data-scroll-target="#rmarkdown-example">Rmarkdown example</a></li>
+  <li><a href="#rmarkdown-example-1" id="toc-rmarkdown-example-1" class="nav-link" data-scroll-target="#rmarkdown-example-1">Rmarkdown example</a>
+  <ul class="collapse">
+  <li><a href="#writing-code" id="toc-writing-code" class="nav-link" data-scroll-target="#writing-code">Writing code</a></li>
+  <li><a href="#adding-images" id="toc-adding-images" class="nav-link" data-scroll-target="#adding-images">Adding images</a></li>
+  <li><a href="#knitting-the-document-and-formatting-item" id="toc-knitting-the-document-and-formatting-item" class="nav-link" data-scroll-target="#knitting-the-document-and-formatting-item">Knitting the document and formatting item</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -146,7 +186,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Integration</h1>
+<h1 class="title">Rmarkdown example</h1>
 </div>
 
 
@@ -157,16 +197,10 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 1, 2024</p>
+      <p class="date">January 1, 2000</p>
     </div>
   </div>
   
-    <div>
-    <div class="quarto-title-meta-heading">Modified</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 7, 2024</p>
-    </div>
-  </div>
     
   </div>
   
@@ -175,135 +209,55 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>For the data integration and comparison between conditions, you will work in groups and load the datasets from each personal folder to merge them together (all sixteen of them).</p>
-<p>The groups are as during the course. Each group performs a comparison between Control and RINRK1_Infected and can separate in two subgroups, performing separately - the differential gene expression and - the coexpression analysis. Each group folder has a two subgroups folder, in case you want to split the work. The working folders are inside ´Group_analysis´.</p>
-<p>All groups and subgroups can exchange information and discuss their own findings.</p>
-<table class="table">
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Group</th>
-<th>Comparison</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Andersen, Albert Lund</td>
-<td>1</td>
-<td>HAR1_Control vs Gifu_Control</td>
-</tr>
-<tr class="even">
-<td>Bagger, Andreas</td>
-<td>1</td>
-<td>HAR1_Control vs Gifu_Control</td>
-</tr>
-<tr class="odd">
-<td>Hansen, Mads Würgler</td>
-<td>1</td>
-<td>HAR1_Control vs Gifu_Control</td>
-</tr>
-<tr class="even">
-<td>Milo, Lasse</td>
-<td>1</td>
-<td>HAR1_Control vs Gifu_Control</td>
-</tr>
-<tr class="odd">
-<td>Reimick, Sebastian Haunstrup</td>
-<td>1</td>
-<td>HAR1_Control vs Gifu_Control</td>
-</tr>
-<tr class="even">
-<td>Hemmingsen, Jonas Klejs</td>
-<td>2</td>
-<td>HAR1_Infected vs Gifu_Infected</td>
-</tr>
-<tr class="odd">
-<td>Skovmøller, Emma Hvitfeldt</td>
-<td>2</td>
-<td>HAR1_Infected vs Gifu_Infected</td>
-</tr>
-<tr class="even">
-<td>Sørensen, Emma Frasez</td>
-<td>2</td>
-<td>HAR1_Infected vs Gifu_Infected</td>
-</tr>
-<tr class="odd">
-<td>Agersnap, Simon Nørregaard</td>
-<td>2</td>
-<td>HAR1_Infected vs Gifu_Infected</td>
-</tr>
-<tr class="even">
-<td>Schmidt, Alina</td>
-<td>3</td>
-<td>HAR1_Control vs Gifu_Control</td>
-</tr>
-<tr class="odd">
-<td>Henriksen, Frederik Oskar</td>
-<td>3</td>
-<td>HAR1_Control vs Gifu_Control</td>
-</tr>
-<tr class="even">
-<td>Lundby, Josephine Marie</td>
-<td>3</td>
-<td>HAR1_Control vs Gifu_Control</td>
-</tr>
-<tr class="odd">
-<td>Nørholm, Anne</td>
-<td>3</td>
-<td>HAR1_Control vs Gifu_Control</td>
-</tr>
-<tr class="even">
-<td>Odgaard, Louise Nyrup</td>
-<td>3</td>
-<td>HAR1_Control vs Gifu_Control</td>
-</tr>
-<tr class="odd">
-<td>Sørensen, Sara Sejer</td>
-<td>3</td>
-<td>HAR1_Control vs Gifu_Control</td>
-</tr>
-<tr class="even">
-<td>Lønskov, Jonas</td>
-<td>4</td>
-<td>HAR1_Infected vs Gifu_Infected</td>
-</tr>
-<tr class="odd">
-<td>Niklassen, Jacob Hansen</td>
-<td>4</td>
-<td>HAR1_Infected vs Gifu_Infected</td>
-</tr>
-<tr class="even">
-<td>Øllgaard, Ann Mai Brøndum Holm</td>
-<td>4</td>
-<td>HAR1_Infected vs Gifu_Infected</td>
-</tr>
-<tr class="odd">
-<td>Overgaard, Morten Øgelund</td>
-<td>4</td>
-<td>HAR1_Infected vs Gifu_Infected</td>
-</tr>
-<tr class="even">
-<td>Sørensen, Elisabeth Asta</td>
-<td>4</td>
-<td>HAR1_Infected vs Gifu_Infected</td>
-</tr>
-<tr class="odd">
-<td>Rey, Isabel</td>
-<td>4</td>
-<td>HAR1_Infected vs Gifu_Infected</td>
-</tr>
-</tbody>
-</table>
-<section id="instructions" class="level2">
-<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
-<p>Here you will work together and only one person needs to start <code>jupyterlab</code> ( it can be a different person every time ).</p>
-<ol type="1">
-<li><p>Start a <code>jupyterlab</code> session as you did in <a href="./tutorial.html">the tutorial session</a></p></li>
-<li><p>Go into the correct Group folder found inside <code>426401/Groups_analysis</code>. Here you find the notebook <code>integration.ipynb</code>, a copy from the second part of the tutorial.</p></li>
-<li><p>Try to do the clustering integrating all datasets and then perform the assigned comparison.</p></li>
-</ol>
+<section id="rmarkdown-example" class="level1">
+<h1>Rmarkdown example</h1>
+<p>2000-01-01</p>
+</section>
+<section id="rmarkdown-example-1" class="level1">
+<h1>Rmarkdown example</h1>
+<p>!!! note “Section Overview”</p>
+<pre><code>&amp;#128368; **Time Estimation:** X minutes  
+
+&amp;#128172; **Learning Objectives:**    
+    1. First item  
+    2. Second item  </code></pre>
+<p>This is an example of how to make md pages from rmarkdown documents. The source code to generate this md document is in <code>develop/rmd/rmarkdown_example.Rmd</code>.</p>
+<p>First we need to write the document as usual. Try to use the admonitions as in previous examples.</p>
+<section id="writing-code" class="level2">
+<h2 class="anchored" data-anchor-id="writing-code">Writing code</h2>
+<p>You can run code as usual in Rmarkdown. The chunk options can be very useful. By default, the code will not run unless explicity specified in the chunk (you can change this behaviour on the “knitr” chunk above).</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> txhousing, <span class="fu">aes</span>(<span class="at">x =</span> sales, <span class="at">y =</span> listings)) <span class="sc">+</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="./images/rmarkdown_example/ggplot-1.png" style="display: block; margin: auto;"></p>
+</section>
+<section id="adding-images" class="level2">
+<h2 class="anchored" data-anchor-id="adding-images">Adding images</h2>
+<p>You can add images using the <code>knitr::include_graphics()</code> option. The images should be in the same folder, otherwise they will break in the step below:</p>
+<p><img src="./images/favicon.png" width="853" style="display: block; margin: auto;"></p>
+</section>
+<section id="knitting-the-document-and-formatting-item" class="level2">
+<h2 class="anchored" data-anchor-id="knitting-the-document-and-formatting-item">Knitting the document and formatting item</h2>
+<p>To use this document in the webpage, you will have to knit it first as a github_document. This is already setup in the yaml menu above. The knitted files will be created in the <code>knit</code> folder. Unfortunately, knitting creates a couple of issues. First, we need to get rid of the knit options of the yaml file. Knitting will also create a header with the title, author and date on the newly created md document. Lastly, for some reason, knitting will change the normal quotes “” into cursive quotes “”. This will completely mess up the admonitions, and mkdocs will not display them properly.</p>
+<p>In order to solve this issues, there is a small <code>modify_md.ipynb</code> file that will take all the created github_document (*.md) files and fix these issues.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> os <span class="im">import</span> listdir</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>files <span class="op">=</span> listdir(<span class="st">"./knit/"</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(files)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> files:</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i.endswith(<span class="st">".md"</span>):</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">with</span> <span class="bu">open</span>(<span class="st">"./knit/"</span><span class="op">+</span> i) <span class="im">as</span> f:</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>            text <span class="op">=</span> f.read()</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>            text <span class="op">=</span> re.sub(<span class="st">"</span><span class="ch">\n</span><span class="st">knit((.|</span><span class="ch">\n</span><span class="st">)*)</span><span class="ch">\n</span><span class="st">[0-9]</span><span class="sc">{4}</span><span class="st">-[0-9]</span><span class="sc">{2}</span><span class="st">-[0-9]</span><span class="sc">{2}</span><span class="ch">\n</span><span class="st">"</span>, <span class="st">"</span><span class="ch">\n</span><span class="st">---</span><span class="ch">\n</span><span class="st">"</span> ,text)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>            text <span class="op">=</span> re.sub(<span class="st">"(”|“)"</span>,<span class="st">"</span><span class="ch">\"</span><span class="st">"</span>,text)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">with</span> <span class="bu">open</span>(<span class="st">"./knit/"</span><span class="op">+</span> i, <span class="st">"w"</span>) <span class="im">as</span> f:</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>            f.write(text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can then move the knitted documents (and the images if needed) to the <code>develop</code> folder.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
