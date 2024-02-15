@@ -17,13 +17,24 @@ website:
         text: Filtering
       - href: integration.qmd
         text: Integration
-      - href: nb/tutorial-2024.ipynb
-        text: Tutorial Code
+      - sidebar:code
+      #- href: nb/Cleaningthedata.source.ipynb
+      #  text: Alignment Code
+      #- href: nb/tutorial-2024.ipynb
+      #  text: Analysis Code
     right: 
       - icon: github
         href: https://github.com/SamueleSoraggi/scsm
         aria-label: GitHub
-
+  sidebar:
+    - id: code
+      title: "Code"
+      style: "docked"
+      background: light
+      collapse-level: 2
+      contents: 
+        - nb/Cleaningthedata.source.ipynb
+        - nb/tutorial-2024.ipynb
 format:
   html:
     theme: 

@@ -41,7 +41,7 @@
 \makeatother
 \usepackage{xcolor}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
-\setcounter{secnumdepth}{5}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 % Make \paragraph and \subparagraph free-standing
 \ifx\paragraph\undefined\else
   \let\oldparagraph\paragraph
@@ -217,7 +217,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
-  pdftitle={Single Cell Analysis Tutorial},
+  pdftitle={Downstream Analysis Tutorial},
   pdfauthor={Samuele Soraggi},
   colorlinks=true,
   linkcolor={blue},
@@ -226,7 +226,7 @@
   urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
 
-\title{Single Cell Analysis Tutorial}
+\title{Downstream Analysis Tutorial}
 \author{Samuele Soraggi}
 \date{}
 
@@ -278,7 +278,7 @@ rhizobia-infected and two wild types) from
 et al. (2023)}. The last section follows some of the
 \href{https://smorabit.github.io/hdWGCNA/}{tutorials from hdWGCNA}.
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, breakable, coltitle=black, bottomrule=.15mm, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, title={Learning outcomes}, rightrule=.15mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, arc=.35mm, leftrule=.75mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, titlerule=0mm, colback=white, bottomrule=.15mm, left=2mm, coltitle=black, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, breakable, toptitle=1mm, title={Learning outcomes}, arc=.35mm, colframe=quarto-callout-note-color-frame, leftrule=.75mm]
 
 At the end of this tutorial \textbf{you will be able to use \texttt{R}
 to}
@@ -458,7 +458,7 @@ tutorial. Note the lower plateau of ambient RNA}
 
 \end{figure}%
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, breakable, coltitle=black, bottomrule=.15mm, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, title={Exercise}, rightrule=.15mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, arc=.35mm, leftrule=.75mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, titlerule=0mm, colback=white, bottomrule=.15mm, left=2mm, coltitle=black, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, breakable, toptitle=1mm, title={Exercise}, arc=.35mm, colframe=quarto-callout-note-color-frame, leftrule=.75mm]
 
 In this same folder you have the document \texttt{web\_summary.html}
 that shows you the quality report of your own dataset. \textbf{Take some
@@ -470,7 +470,7 @@ in this tutorial.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, breakable, coltitle=black, bottomrule=.15mm, toprule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Something more about knee plots}, rightrule=.15mm, titlerule=0mm, left=2mm, colframe=quarto-callout-tip-color-frame, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, arc=.35mm, leftrule=.75mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, titlerule=0mm, colback=white, bottomrule=.15mm, left=2mm, coltitle=black, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, breakable, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Something more about knee plots}, arc=.35mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm]
 
 The background RNA (sequenced together with the transcript coming from
 the cell of interest) makes up the \emph{ambient plateau}: the same
@@ -511,7 +511,7 @@ from sequenced data. Figure from
 
 \section{Preprocessing}\label{sec-preprocessing}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, breakable, coltitle=black, bottomrule=.15mm, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Learning outcome}, rightrule=.15mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, arc=.35mm, leftrule=.75mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, titlerule=0mm, colback=white, bottomrule=.15mm, left=2mm, coltitle=black, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, breakable, toptitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Learning outcome}, arc=.35mm, colframe=quarto-callout-note-color-frame, leftrule=.75mm]
 
 We will answer to the following questions:
 
@@ -585,7 +585,7 @@ when your own data is aligned. In this tutorial, the aligned data is in
 the folder used below. The command for reading the data is simply
 \texttt{Read10X}.
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, breakable, coltitle=black, bottomrule=.15mm, toprule=.15mm, colbacktitle=quarto-callout-important-color!10!white, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Important}, rightrule=.15mm, titlerule=0mm, left=2mm, colframe=quarto-callout-important-color-frame, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, arc=.35mm, leftrule=.75mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, colbacktitle=quarto-callout-important-color!10!white, titlerule=0mm, colback=white, bottomrule=.15mm, left=2mm, coltitle=black, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, breakable, toptitle=1mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Important}, arc=.35mm, colframe=quarto-callout-important-color-frame, leftrule=.75mm]
 
 When using your own data, you need to use the correct folder name below
 according to the \texttt{10X} folder structure
@@ -746,7 +746,7 @@ We want to use this data later in the analysis with other
 \texttt{Condition} to the metadata table, and for this dataset we
 establish that each cell is \texttt{Control}.
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, breakable, coltitle=black, bottomrule=.15mm, toprule=.15mm, colbacktitle=quarto-callout-important-color!10!white, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Important}, rightrule=.15mm, titlerule=0mm, left=2mm, colframe=quarto-callout-important-color-frame, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, arc=.35mm, leftrule=.75mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, colbacktitle=quarto-callout-important-color!10!white, titlerule=0mm, colback=white, bottomrule=.15mm, left=2mm, coltitle=black, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, breakable, toptitle=1mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Important}, arc=.35mm, colframe=quarto-callout-important-color-frame, leftrule=.75mm]
 
 When using your own data, do not forget to \textbf{write the correct
 condition label}.
@@ -1627,7 +1627,7 @@ The data we are using contained about 10000 cells per sample (as in the
 knee plot at the beginning), hence we can assume that it originates from
 around 18000 loaded cells and should have a doublet rate at about 7.6\%.
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, breakable, coltitle=black, bottomrule=.15mm, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, rightrule=.15mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, arc=.35mm, leftrule=.75mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, titlerule=0mm, colback=white, bottomrule=.15mm, left=2mm, coltitle=black, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, breakable, toptitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, arc=.35mm, colframe=quarto-callout-note-color-frame, leftrule=.75mm]
 
 Doublet prediction, like the rest of the filtering, \textbf{should be
 run on each sample separately}.
@@ -4045,7 +4045,7 @@ simultaneously, and we find which modules are differentially expressed
 in specific clusters. We look at the GO terms to gain biological insight
 in the data.
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, breakable, coltitle=black, bottomrule=.15mm, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, rightrule=.15mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, arc=.35mm, leftrule=.75mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, titlerule=0mm, colback=white, bottomrule=.15mm, left=2mm, coltitle=black, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, breakable, toptitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, arc=.35mm, colframe=quarto-callout-note-color-frame, leftrule=.75mm]
 
 Before running hdWGCNA, we first have to set up the Seurat object. Most
 of the information computed by hdWGCNA will be stored in the Seurat
@@ -4110,7 +4110,7 @@ cells originating from the same biological sample of origin}.
 
 \includegraphics{./images/hdwgcna.jpg} \{\#fig-hdwgcna, width=800\}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, breakable, coltitle=black, bottomrule=.15mm, toprule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Something more about hdWGCNA}, rightrule=.15mm, titlerule=0mm, left=2mm, colframe=quarto-callout-tip-color-frame, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, arc=.35mm, leftrule=.75mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, titlerule=0mm, colback=white, bottomrule=.15mm, left=2mm, coltitle=black, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, breakable, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Something more about hdWGCNA}, arc=.35mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm]
 
 The k-Nearest Neighbors (KNN) algorithm is used to identify groups of
 similar cells to aggregate, and then the average or summed expression of
@@ -5486,7 +5486,7 @@ being simultaneously significant.}
 
 \end{figure}%
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, breakable, coltitle=black, bottomrule=.15mm, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Wrapping Up}, rightrule=.15mm, titlerule=0mm, left=2mm, colframe=quarto-callout-note-color-frame, opacitybacktitle=0.6, toptitle=1mm, bottomtitle=1mm, arc=.35mm, leftrule=.75mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, titlerule=0mm, colback=white, bottomrule=.15mm, left=2mm, coltitle=black, rightrule=.15mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, breakable, toptitle=1mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Wrapping Up}, arc=.35mm, colframe=quarto-callout-note-color-frame, leftrule=.75mm]
 
 This is the end of the tutorial. We have not shown much biological
 conclusion from the analysis - this is something that comes out by
