@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Samuele Soraggi">
 
-<title>Single cell Single molecule course - Single Cell Analysis Tutorial</title>
+<title>Single cell Single molecule course - Downstream Analysis Tutorial</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -130,7 +130,7 @@ div.csl-indent {
 
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -170,10 +170,21 @@ div.csl-indent {
     <a class="nav-link" href="../integration.html"> 
 <span class="menu-text">Integration</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="../nb/tutorial-2024.html" aria-current="page"> 
-<span class="menu-text">Tutorial Code</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-code" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Code</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-code">    
+        <li>
+    <a class="dropdown-item" href="../nb/Cleaningthedata.source.html">
+ <span class="dropdown-text">Alignment and decontamination</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../nb/tutorial-2024.html">
+ <span class="dropdown-text">Downstream Analysis Tutorial</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
@@ -188,10 +199,39 @@ div.csl-indent {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../nb/tutorial-2024.html">Downstream Analysis Tutorial</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../nb/Cleaningthedata.source.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Alignment and decontamination</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../nb/tutorial-2024.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Downstream Analysis Tutorial</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -259,7 +299,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Single Cell Analysis Tutorial</h1>
+<h1 class="title">Downstream Analysis Tutorial</h1>
 </div>
 
 
@@ -652,6 +692,7 @@ LotjaGi0g1v0001400 </code></pre>
 <div id="cell-35" class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>( Control1_seurat<span class="sc">@</span>meta.data )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
+<div>
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
 <caption>A data.frame: 6 × 4</caption>
 <thead>
@@ -717,6 +758,7 @@ LotjaGi0g1v0001400 </code></pre>
 </table>
 </div>
 </div>
+</div>
 <p>The table contains a name for the dataset (<code>orig.ident</code>, useful to distinguish multiple datasets merged together), how many RNA transcripts are contained in each cell (<code>nCount_RNA</code>), the number of expressed genes in each cell (<code>nFeature_RNA</code>), and the <code>Condition</code> (added by us previously). More metadata can be added along the analysis, and some is added automatically by Seurat when running specific commands.</p>
 <p>The <code>assays</code> and <code>meta.data</code> slots are the most relevant and useful to know - the other ones are mostly for internal use by Seurat and we do not go into detail with those.</p>
 </section>
@@ -737,6 +779,7 @@ LotjaGi0g1v0001400 </code></pre>
 <div id="cell-42" class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>( Control1_seurat<span class="sc">@</span>meta.data )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
+<div>
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
 <caption>A data.frame: 6 × 6</caption>
 <thead>
@@ -816,6 +859,7 @@ LotjaGi0g1v0001400 </code></pre>
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 <section id="number-of-transcripts-per-cell" class="level4" data-number="2.3.1.1">
@@ -1081,7 +1125,7 @@ Figure&nbsp;10: Count vs features after filtering with the chosen criteria
 `geom_smooth()` using formula = 'y ~ x'
 `geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
-<div id="fig-corr" class="cell quarto-figure quarto-figure-center quarto-float anchored" data-execution_count="32" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div id="fig-corr" class="cell quarto-figure quarto-figure-center quarto-float anchored" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="32" data-tags="[]">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-corr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-display">
@@ -1889,6 +1933,7 @@ Elapsed time: 0 seconds</code></pre>
 <div id="cell-116" class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="63">
 <div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>( seurat.integrated<span class="sc">@</span>meta.data )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
+<div>
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
 <caption>A data.frame: 6 × 18</caption>
 <thead>
@@ -2064,6 +2109,7 @@ Elapsed time: 0 seconds</code></pre>
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 <p>We can plot the clusters in the UMAP plot</p>
@@ -2371,7 +2417,7 @@ Predicting cell labels
 <div id="cell-155" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="89">
 <div class="sourceCode cell-code" id="cb126"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb126-1"><a href="#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Idents</span>(seurat.clustered) <span class="ot">&lt;-</span> <span class="st">'predicted.id'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="fig-transfer" class="cell quarto-figure quarto-figure-center quarto-float anchored" data-execution_count="1" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div id="fig-transfer" class="cell quarto-figure quarto-figure-center quarto-float anchored" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="1" data-tags="[]">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-transfer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="sourceCode cell-code" id="cb127"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb127-1"><a href="#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repr.plot.width=</span><span class="dv">10</span>, <span class="at">repr.plot.height=</span><span class="dv">10</span>)</span>
@@ -2472,6 +2518,7 @@ Conserved genes in Quiescent center</code></pre>
 <div id="cell-168" class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="58">
 <div class="sourceCode cell-code" id="cb137"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb137-1"><a href="#cb137-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(conserved_markers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
+<div>
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
 <caption>A data.frame: 6 × 17</caption>
 <thead>
@@ -2641,10 +2688,12 @@ Conserved genes in Quiescent center</code></pre>
 </table>
 </div>
 </div>
+</div>
 <p>We can easily look at the interesting columns:</p>
 <div id="cell-170" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="59">
 <div class="sourceCode cell-code" id="cb138"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>( conserved_markers[,<span class="fu">c</span>(<span class="st">'cluster_id'</span>, <span class="st">'gene'</span>, <span class="st">'Average_log2FC'</span>, <span class="st">'Max_p_val_adj'</span>)] )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
+<div>
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
 <caption>A data.frame: 6 × 4</caption>
 <thead>
@@ -2710,6 +2759,7 @@ Conserved genes in Quiescent center</code></pre>
 </table>
 </div>
 </div>
+</div>
 <p>So many of those columns are not significant in term of differential gene expression! This means that their expression is conserved across conditions, but they are <strong>not specific to any cluster</strong>. Rather, they are found with the same expression everywhere. It is definitely more interesting to look at the genes that are specific of some clusters. We define the table with only our columns of interest, and then we filter the non-significant genes. Also, we can filter by requiring that the log fold-change is above 1.5, so that we do not have too many genes to look at in each cluster. Remember we are using logarithms, so it means the expression is larger by a factor 2.83 (2 elevated at the power of 1.5).</p>
 <div id="cell-172" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="60">
 <div class="sourceCode cell-code" id="cb139"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb139-1"><a href="#cb139-1" aria-hidden="true" tabindex="-1"></a>conserved_filtered <span class="ot">&lt;-</span> conserved_markers <span class="sc">%&gt;%</span></span>
@@ -2719,6 +2769,7 @@ Conserved genes in Quiescent center</code></pre>
 <div id="cell-173" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="61">
 <div class="sourceCode cell-code" id="cb140"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb140-1"><a href="#cb140-1" aria-hidden="true" tabindex="-1"></a>conserved_filtered</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
+<div>
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
 <caption>A data.frame: 643 × 4</caption>
 <thead>
@@ -3106,6 +3157,7 @@ Conserved genes in Quiescent center</code></pre>
 </table>
 </div>
 </div>
+</div>
 <p>We can use our list in combination witht he gene ontology table, so that we can find out the relevant go-terms for each cluster and the genes we have found.</p>
 <p>We open the gene ontology table</p>
 <div id="cell-175" class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="62">
@@ -3121,6 +3173,7 @@ Conserved genes in Quiescent center</code></pre>
 <div id="cell-178" class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="64">
 <div class="sourceCode cell-code" id="cb143"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb143-1"><a href="#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>( go_table )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
+<div>
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
 <caption>A data.frame: 6 × 2</caption>
 <thead>
@@ -3170,6 +3223,7 @@ Conserved genes in Quiescent center</code></pre>
 </table>
 </div>
 </div>
+</div>
 <p>The code below adds the GO terms to our filtered table of conserved markers. We parse from the go table the terms from the TAIR (<a href="https://www.arabidopsis.org/index.jsp">arabidopsis protein archive</a>) and the reviewed <code>swiss-uniprotKB</code> <a href="https://www.uniprot.org/uniprotkb?query=*&amp;facets=reviewed%3Atrue%2Cmodel_organism%3A3702">protein archive for plants</a> for the arabidopsis thaliana. It can take some time to run, but is usually fast because we parallelized the function (here we assign GO terms to 16 genes at a time).</p>
 <div id="cell-180" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="69">
 <div class="sourceCode cell-code" id="cb144"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb144-1"><a href="#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"script.R"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3183,6 +3237,7 @@ Conserved genes in Quiescent center</code></pre>
 <div id="cell-183" class="cell" data-scrolled="true" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="71">
 <div class="sourceCode cell-code" id="cb146"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb146-1"><a href="#cb146-1" aria-hidden="true" tabindex="-1"></a>conserved_filtered <span class="sc">%&gt;%</span> <span class="fu">filter</span>(cluster_id<span class="sc">==</span><span class="st">'Phloem'</span> <span class="sc">&amp;</span> GO<span class="sc">!=</span><span class="st">'Undefined'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
+<div>
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
 <caption>A data.frame: 44 × 5</caption>
 <thead>
@@ -3514,6 +3569,7 @@ Conserved genes in Quiescent center</code></pre>
 </table>
 </div>
 </div>
+</div>
 <p>As a last check, we can see if the gene RINRK1 is in the table. The gene ID we need for RINCR1 is <code>LotjaGi1g1v0732500</code>. Since this gene should be expressed only within the infected samples, we expect not to find it in the table of conserved genes:</p>
 <div id="cell-185" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="72">
 <div class="sourceCode cell-code" id="cb147"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb147-1"><a href="#cb147-1" aria-hidden="true" tabindex="-1"></a>RINRK1.id <span class="ot">&lt;-</span> <span class="st">'LotjaGi1g1v0182900'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3521,6 +3577,7 @@ Conserved genes in Quiescent center</code></pre>
 <div id="cell-186" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="73">
 <div class="sourceCode cell-code" id="cb148"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb148-1"><a href="#cb148-1" aria-hidden="true" tabindex="-1"></a>conserved_filtered <span class="sc">%&gt;%</span> <span class="fu">filter</span>(gene<span class="sc">==</span>RINRK1.id)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
+<div>
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
 <caption>A data.frame: 0 × 5</caption>
 <thead>
@@ -3542,6 +3599,7 @@ Conserved genes in Quiescent center</code></pre>
 <tbody>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 <p>Again, we saved the filtered table of conserved genes with the GO terms, so it can be downloaded and used outside the programming environment.</p>
@@ -3705,6 +3763,7 @@ Done with cluster Quiescent center</code></pre>
 <div id="cell-205" class="cell" data-scrolled="true" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb162"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb162-1"><a href="#cb162-1" aria-hidden="true" tabindex="-1"></a>DEG <span class="sc">%&gt;%</span> <span class="fu">filter</span>(cluster<span class="sc">==</span><span class="st">"Cortex"</span> <span class="sc">&amp;</span> GO<span class="sc">!=</span><span class="st">"Undefined"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
+<div>
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
 <caption>A data.frame: 2 × 7</caption>
 <thead>
@@ -3754,10 +3813,12 @@ Done with cluster Quiescent center</code></pre>
 </table>
 </div>
 </div>
+</div>
 <p>Finally, we do not expect to find the RINRK1 gene as differentially expressed, because its expression is on average too low.</p>
 <div id="cell-207" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb163"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb163-1"><a href="#cb163-1" aria-hidden="true" tabindex="-1"></a>DEG <span class="sc">%&gt;%</span> <span class="fu">filter</span>(gene<span class="sc">==</span>RINRK1.id)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
+<div>
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
 <caption>A data.frame: 0 × 7</caption>
 <thead>
@@ -3783,6 +3844,7 @@ Done with cluster Quiescent center</code></pre>
 <tbody>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 <p>We save the table:</p>
@@ -4391,6 +4453,7 @@ Figure&nbsp;28: KMEs for each module, where the genes on the right of each plot 
 <span id="cb187-4"><a href="#cb187-4" aria-hidden="true" tabindex="-1"></a><span class="co"># show the first 6 columns:</span></span>
 <span id="cb187-5"><a href="#cb187-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(modules[,<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
+<div>
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
 <caption>A data.frame: 6 × 6</caption>
 <thead>
@@ -4472,6 +4535,7 @@ Figure&nbsp;28: KMEs for each module, where the genes on the right of each plot 
 </table>
 </div>
 </div>
+</div>
 <p>A table of the top N hub genes sorted by kME can be extracted using the <code>GetHubGenes</code> function. Here we choose the top 10 genes, but you can change the value if you want</p>
 <div id="cell-236" class="cell" data-scrolled="true" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="65">
 <div class="sourceCode cell-code" id="cb188"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb188-1"><a href="#cb188-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get hub genes</span></span>
@@ -4479,6 +4543,7 @@ Figure&nbsp;28: KMEs for each module, where the genes on the right of each plot 
 <span id="cb188-3"><a href="#cb188-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb188-4"><a href="#cb188-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>( hub_df )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
+<div>
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
 <caption>A data.frame: 6 × 3</caption>
 <thead>
@@ -4536,6 +4601,7 @@ Figure&nbsp;28: KMEs for each module, where the genes on the right of each plot 
 </table>
 </div>
 </div>
+</div>
 <p>Again, we can assign GO terms to better check associated functions</p>
 <div id="cell-238" class="cell" data-tags="[]" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="66">
 <div class="sourceCode cell-code" id="cb189"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb189-1"><a href="#cb189-1" aria-hidden="true" tabindex="-1"></a>go_table <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"./LJ_GO_terms.gaf"</span>, <span class="at">skip=</span><span class="dv">6</span>, <span class="at">sep=</span><span class="st">'</span><span class="sc">\t</span><span class="st">'</span>, <span class="at">fill=</span><span class="cn">TRUE</span>, <span class="at">quote =</span> <span class="st">"</span><span class="sc">\"</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -4553,6 +4619,7 @@ Figure&nbsp;28: KMEs for each module, where the genes on the right of each plot 
 <div id="cell-242" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="77">
 <div class="sourceCode cell-code" id="cb192"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb192-1"><a href="#cb192-1" aria-hidden="true" tabindex="-1"></a>hub_filtered</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
+<div>
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
 <caption>A data.frame: 10 × 4</caption>
 <thead>
@@ -4632,6 +4699,7 @@ Figure&nbsp;28: KMEs for each module, where the genes on the right of each plot 
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 <p>We save the table for later use</p>
@@ -4766,6 +4834,7 @@ Warning message:
 <div id="cell-258" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="90">
 <div class="sourceCode cell-code" id="cb207"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb207-1"><a href="#cb207-1" aria-hidden="true" tabindex="-1"></a>DMEs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
+<div>
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
 <caption>A data.frame: 4 × 5</caption>
 <thead>
@@ -4821,6 +4890,7 @@ Warning message:
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 <p>We can also do a lollipop plot as in <a href="#fig-lol" class="quarto-xref">Figure&nbsp;29</a>, where the size of each circle is the p-value, and the x-axis is the log-fold change. A cross on a circle means the p-value is not significant. Module 4 and 11 are very interesting because of their over- and under-expression, though you should note the difference in percentages is pretty small. In our case we filtered out p-values that were too high, so we have only significant modules in the plot.</p>
@@ -4886,6 +4956,7 @@ Figure&nbsp;29: Lollipop plot that shovs the average log-fold change of each mod
 <div id="cell-266" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="95">
 <div class="sourceCode cell-code" id="cb214"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb214-1"><a href="#cb214-1" aria-hidden="true" tabindex="-1"></a>DMEs_cortex</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
+<div>
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
 <caption>A data.frame: 14 × 7</caption>
 <thead>
@@ -5055,6 +5126,7 @@ Figure&nbsp;29: Lollipop plot that shovs the average log-fold change of each mod
 </table>
 </div>
 </div>
+</div>
 <p>You can look at any other cluster. For example trichoblasts. Here you can see how module 4 pops up as being basically entirely expressed only in Trichoblasts.</p>
 <div id="cell-268" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="96">
 <div class="sourceCode cell-code" id="cb215"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb215-1"><a href="#cb215-1" aria-hidden="true" tabindex="-1"></a>DMEs_tricho <span class="ot">&lt;-</span> DMEs_all <span class="sc">%&gt;%</span> <span class="fu">filter</span>(p_val_adj <span class="sc">&lt;</span> .<span class="dv">001</span> <span class="sc">&amp;</span> <span class="fu">abs</span>(avg_log2FC)<span class="sc">&gt;</span><span class="dv">1</span> </span>
@@ -5064,6 +5136,7 @@ Figure&nbsp;29: Lollipop plot that shovs the average log-fold change of each mod
 <div id="cell-269" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="97">
 <div class="sourceCode cell-code" id="cb216"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb216-1"><a href="#cb216-1" aria-hidden="true" tabindex="-1"></a>DMEs_tricho</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
+<div>
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
 <caption>A data.frame: 15 × 7</caption>
 <thead>
@@ -5241,6 +5314,7 @@ Figure&nbsp;29: Lollipop plot that shovs the average log-fold change of each mod
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 <p>For better visualization, you can always use the lolliplot plots using the correct table as an argument, so that you can plot multiple instances for the various clusters. In <a href="#fig-lol2" class="quarto-xref">Figure&nbsp;30</a> we plot boyh for cortex and trichoblasts from the tables determined in the code above.</p>
