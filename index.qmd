@@ -24,19 +24,22 @@ bibliography: resources/references.bib
 
 Use the top menu to get instructions for the various parts of the analysis as you will be noticed during the course. The top menu contains:
 
-1. **Tutorial:** analysis tutorial using data from the [Biorxiv paper of week 6](https://www.biorxiv.org/content/10.1101/2022.12.23.521739v1) 
+1. **Alignment:** a small tutorial to align data and decontaminate it from Ambient RNA. This is mostly to get confidence with the computing tool and interface.
+(every student works independently). Tutorial days: together with the lecture (16.february 2024)
+
+2. **Analysis:** downstream analysis tutorial using data from the paper @frank_single-cell_2023
 (every student works independently). Tutorial days: 1st and eventually 2nd day of data analysis
 
-2. **Data Filtering:** filtering of your own data (every student works independently). Filtering days: 
+2. **Filtering:** filtering of your own data (every student works independently). Filtering days: 
 
-3. **Data Integration:** integration of all datasets and comparison between between Gifu and HAR1 mutant. Integration days: 
+3. **Integration:** integration of all datasets and comparison between between Gifu and RINRK1 mutant. Integration days: 
 
 ## Progress discussion
 
-***day (May ***) each group shows the progress made in the integration analysis. You don't need to do slides, just show some main plots/tables from your analysis notebook. Even just one or two plots or tables would be fine.
+On DAYMONTH2024 each group shows the progress made in the integration analysis. You don't need to do slides, just show some main plots/tables from your analysis notebook. Even just one or two plots or tables would be fine.
 
-It is mostly a time to compare progresses and discuss any issue (technically or biologically related).
+It is only a time to compare progresses and discuss any issue.
 
 ## Beyond lesson time
 
-Please try to mail if you run into problems (`samuele at birc.au.dk`) so we can try to organize a meeting or zoom session to continue working.
+Please try to mail if you run into problems (`samuele at birc.au.dk`) so we can try to solve it immediately to continue working.
