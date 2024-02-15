@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2024-01-01">
 
-<title>Single cell Single molecule - scRNA analysis - Single cell data analysis</title>
+<title>Single cell Single molecule course - Single cell data analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,7 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -84,7 +104,7 @@ ul.task-list li input[type="checkbox"] {
     <img src="./img/logo.png" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Single cell Single molecule - scRNA analysis</span>
+    <span class="navbar-title">Single cell Single molecule course</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -98,8 +118,12 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Introduction</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./alignandclean.html"> 
+<span class="menu-text">Alignment</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./tutorial.html"> 
-<span class="menu-text">Tutorial</span></a>
+<span class="menu-text">Analysis</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./filtering.html"> 
@@ -167,7 +191,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 7, 2024</p>
+      <p class="date-modified">February 15, 2024</p>
     </div>
   </div>
     
@@ -202,24 +226,30 @@ Objective of the analysis
 <h2 class="anchored" data-anchor-id="how-to-proceed">How to proceed</h2>
 <p>Use the top menu to get instructions for the various parts of the analysis as you will be noticed during the course. The top menu contains:</p>
 <ol type="1">
-<li><p><strong>Tutorial:</strong> analysis tutorial using data from the <a href="https://www.biorxiv.org/content/10.1101/2022.12.23.521739v1">Biorxiv paper of week 6</a> (every student works independently). Tutorial days: 1st and eventually 2nd day of data analysis</p></li>
-<li><p><strong>Data Filtering:</strong> filtering of your own data (every student works independently). Filtering days:</p></li>
-<li><p><strong>Data Integration:</strong> integration of all datasets and comparison between between Gifu and HAR1 mutant. Integration days:</p></li>
+<li><p><strong>Alignment:</strong> a small tutorial to align data and decontaminate it from Ambient RNA. This is mostly to get confidence with the computing tool and interface. (every student works independently). Tutorial days: together with the lecture (16.february 2024)</p></li>
+<li><p><strong>Analysis:</strong> downstream analysis tutorial using data from the paper <span class="citation" data-cites="frank_single-cell_2023">Frank et al. (<a href="#ref-frank_single-cell_2023" role="doc-biblioref">2023</a>)</span> (every student works independently). Tutorial days: 1st and eventually 2nd day of data analysis</p></li>
+<li><p><strong>Filtering:</strong> filtering of your own data (every student works independently). Filtering days:</p></li>
+<li><p><strong>Integration:</strong> integration of all datasets and comparison between between Gifu and RINRK1 mutant. Integration days:</p></li>
 </ol>
 </section>
 <section id="progress-discussion" class="level2">
 <h2 class="anchored" data-anchor-id="progress-discussion">Progress discussion</h2>
-<p><strong><em>day (May </em></strong>) each group shows the progress made in the integration analysis. You don’t need to do slides, just show some main plots/tables from your analysis notebook. Even just one or two plots or tables would be fine.</p>
-<p>It is mostly a time to compare progresses and discuss any issue (technically or biologically related).</p>
+<p>On DAYMONTH2024 each group shows the progress made in the integration analysis. You don’t need to do slides, just show some main plots/tables from your analysis notebook. Even just one or two plots or tables would be fine.</p>
+<p>It is only a time to compare progresses and discuss any issue.</p>
 </section>
 <section id="beyond-lesson-time" class="level2">
 <h2 class="anchored" data-anchor-id="beyond-lesson-time">Beyond lesson time</h2>
-<p>Please try to mail if you run into problems (<code>samuele at birc.au.dk</code>) so we can try to organize a meeting or zoom session to continue working.</p>
+<p>Please try to mail if you run into problems (<code>samuele at birc.au.dk</code>) so we can try to solve it immediately to continue working.</p>
+
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-frank_single-cell_2023" class="csl-entry" role="listitem">
+Frank, Manuel, Lavinia Ioana Fechete, Francesca Tedeschi, Marcin Nadzieja, Malita Malou Malekzadeh Nørgaard, Jesus Montiel, Kasper Røjkjær Andersen, Mikkel H. Schierup, Dugald Reid, and Stig Uggerhøj Andersen. 2023. <span>“Single-Cell Analysis Identifies Genes Facilitating Rhizobium Infection in <span>Lotus</span> Japonicus.”</span> <em>Nature Communications</em> 14 (November): 7171. <a href="https://doi.org/10.1038/s41467-023-42911-1">https://doi.org/10.1038/s41467-023-42911-1</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
