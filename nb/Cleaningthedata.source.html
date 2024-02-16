@@ -8,7 +8,7 @@
 
 <meta name="author" content="Samuele Soraggi">
 
-<title>Single cell Single molecule course - Alignment and decontamination</title>
+<title>Single cell Single molecule course - Single Cell Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -174,7 +174,7 @@ div.csl-indent {
     <ul class="dropdown-menu" aria-labelledby="nav-menu-code">    
         <li>
     <a class="dropdown-item" href="../nb/Cleaningthedata.source.html">
- <span class="dropdown-text">Alignment and decontamination</span></a>
+ <span class="dropdown-text">Single Cell Analysis</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../nb/tutorial-2024.html">
@@ -201,7 +201,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../nb/Cleaningthedata.source.html">Alignment and decontamination</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../nb/Cleaningthedata.source.html">Single Cell Analysis</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -216,7 +216,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../nb/Cleaningthedata.source.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Alignment and decontamination</span></a>
+ <span class="menu-text">Single Cell Analysis</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -250,8 +250,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Alignment and decontamination</h1>
-<p class="subtitle lead">Cleaning ambient RNA in sequenced single cell data</p>
+<h1 class="title">Single Cell Analysis</h1>
 </div>
 
 
@@ -429,8 +428,15 @@ Expanding counts from 15 clusters to 4931 cells.
 </div>
 <p>You should get an output showing - with a solid line - a distribution of the contamination of each gene. In our toy dataset, the contamination is pretty low, as it could be seen from the knee plot in the web report.</p>
 <p>You can also use the tSNE plot of a specific gene to reveal how many transcripts have been changed due to contamination.</p>
-<div id="cell-14" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}">
+<div id="cell-14" class="cell" data-vscode="{&quot;languageId&quot;:&quot;r&quot;}" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotChangeMap</span>(sc,out,<span class="st">'LotjaGi2g1v0360900'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Cleaningthedata.source_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Wrapping Up">
 <div class="callout-header d-flex align-content-center">
