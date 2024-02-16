@@ -41,7 +41,7 @@
 \makeatother
 \usepackage{xcolor}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
-\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\setcounter{secnumdepth}{5}
 % Make \paragraph and \subparagraph free-standing
 \ifx\paragraph\undefined\else
   \let\oldparagraph\paragraph
@@ -217,7 +217,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
-  pdftitle={Alignment and decontamination},
+  pdftitle={Single Cell Analysis},
   pdfauthor={Samuele Soraggi},
   colorlinks=true,
   linkcolor={blue},
@@ -226,14 +226,7 @@
   urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
 
-\title{Alignment and decontamination}
-\usepackage{etoolbox}
-\makeatletter
-\providecommand{\subtitle}[1]{% add subtitle to \maketitle
-  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
-}
-\makeatother
-\subtitle{Cleaning ambient RNA in sequenced single cell data}
+\title{Single Cell Analysis}
 \author{Samuele Soraggi}
 \date{}
 
@@ -400,7 +393,7 @@ tutorial. Note the lower plateau of ambient RNA}
 
 \end{figure}%
 
-\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-note-color!10!white, left=2mm, breakable, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, opacityback=0, opacitybacktitle=0.6, toprule=.15mm, colback=white, toptitle=1mm, titlerule=0mm, arc=.35mm, title={Exercise}, bottomrule=.15mm, rightrule=.15mm, leftrule=.75mm, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, arc=.35mm, coltitle=black, colback=white, opacityback=0, colframe=quarto-callout-note-color-frame, toptitle=1mm, opacitybacktitle=0.6, breakable, colbacktitle=quarto-callout-note-color!10!white, toprule=.15mm, bottomtitle=1mm, left=2mm, titlerule=0mm, title={Exercise}, leftrule=.75mm, rightrule=.15mm]
 
 In the folder \texttt{Alignment\_results} you have the document
 \texttt{web\_summary.html} that shows you the quality report of your
@@ -557,7 +550,9 @@ transcripts have been changed due to contamination.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-note-color!10!white, left=2mm, breakable, bottomtitle=1mm, colframe=quarto-callout-note-color-frame, opacityback=0, opacitybacktitle=0.6, toprule=.15mm, colback=white, toptitle=1mm, titlerule=0mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Wrapping Up}, bottomrule=.15mm, rightrule=.15mm, leftrule=.75mm, coltitle=black]
+\includegraphics{Cleaningthedata.source_files/figure-pdf/cell-4-output-1.png}
+
+\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, arc=.35mm, coltitle=black, colback=white, opacityback=0, colframe=quarto-callout-note-color-frame, toptitle=1mm, opacitybacktitle=0.6, breakable, colbacktitle=quarto-callout-note-color!10!white, toprule=.15mm, bottomtitle=1mm, left=2mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Wrapping Up}, leftrule=.75mm, rightrule=.15mm]
 
 This is the end of the tutorial - it was mostly ment to let you get
 confidence with a jupyter notebook and the data decontamination process.
