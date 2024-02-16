@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Install libcurl on Linux
         if: runner.os == 'Linux'
-        run: sudo apt-get update -y && sudo apt-get install -y libcurl4-openssl-dev libharfbuzz-dev libfribidi-dev
+        run: sudo apt-get update -y && sudo apt-get install -y libcurl4-openssl-dev libharfbuzz-dev libfribidi-dev texlive-xetex
 
       - name: Check out repository
         uses: actions/checkout@v4
@@ -20,13 +20,13 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Setup TeX Live
-        uses: teatimeguest/setup-texlive-action@v3
-        with:
-          packages: scheme-basic
+#      - name: Setup TeX Live
+#        uses: teatimeguest/setup-texlive-action@v3
+#        with:
+#          packages: scheme-basic
 
-      - name: Check `tlmgr` version
-        run: tlmgr --version
+#      - name: Check `tlmgr` version
+#        run: tlmgr --version
 
       - name: Install R
         uses: r-lib/actions/setup-r@v2
